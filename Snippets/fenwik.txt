@@ -1,0 +1,18 @@
+const int N=(int)1e5 +5;
+int arr[N];
+
+void upd(int x,int val){
+    while(x<N){
+        arr[x]+=val;x +=x&-x;
+    }
+}
+int findSum(int x){
+    int res=0;
+    while(x>0){
+        res+=arr[x];x-= x&-x;
+    }
+    return res;
+}
+int query(int l,int r){
+         return findSum(r)-findSum(l-1);
+}

@@ -1,0 +1,8 @@
+int power(int b,int x)
+	{
+		if(x==0)return 1;
+		int ans=power(b,x/2);
+
+		if(x%2)return (ans*ans*b)%mod;
+		return (ans*ans)%mod;
+	}
